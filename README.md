@@ -105,3 +105,46 @@ Calculando a diferença percentual como:
 Resultando que a solução é 44,71% mais rápida que o código original.
 
 Apesar disso, existe um possível ponto problemático na execução da solução, que é a função splice. A função em questão é responsável por retirar um valor alocado de um vetor, e também realiza o reposicionamento dos valores restantes, sendo assim, ela apresenta algumas perdas de desempenho por estar sempre tendo que rearranjar o vetor que tem um valor retirado dele.
+
+A outra solução encontrada foi embaralhar o vetor, utilizando o método Fisher-Yates Shuffle:
+
+```
+function geraAleatorios(quantidade) {
+    const vetorNumeros = Array.from({ length: 60 }, (_, i) => i + 1); // Cria o array [1, 2, ..., 60]
+
+    // Embaralha o vetor usando Fisher-Yates Shuffle
+    for (let i = vetorNumeros.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [vetorNumeros[i], vetorNumeros[j]] = [vetorNumeros[j], vetorNumeros[i]]; // Troca os elementos
+    }
+
+    // Seleciona os primeiros 'quantidade' números
+    const vetorNumSel = vetorNumeros.slice(0, quantidade);
+
+    console.log(vetorNumSel);
+}
+
+function main(quantidade) {
+    console.time("timer");
+    geraAleatorios(quantidade);
+    console.timeEnd("timer");
+}
+```
+E realmente, o método apresenta um leve ganho de desempenho, passando pelos mesmos testes esses foram os valores encontrados:
+* 0.591064453125 ms
+* 0.3818359375 ms
+* 0.364990234375 ms
+* 0.370849609375 ms
+* 0.419921875 ms
+* 0.405029296875 ms
+* 0.455078125 ms
+* 0.39013671875 ms
+* 0.39404296875 ms
+* 0.400146484375 ms
+
+*Tempo médio: aproximadamente 0.417 ms
+*Desvio padrão: aproximadamente 0.063 ms
+
+Sendo 9,35% mais rápido do que a solução anteriormente apresentada.
+
+Contudo, uma questão semântica me incomoda, seria o processo de embaralhar realmente uma geração de números de forma aleatória? Pode ser apontado que ambas as soluções estão no fundo realizando o mesmo processo, inclusive utilizando as mesmas funções da bibliteca Math, mas dito isso, o fato que o índice é determinado pela variável i, que é predeterminada pelo loop, me faz não conseguir ver essa solução como a ideal para o que foi exigido na questão inicial do projeto. Por isso, mantenho como minha resposta a solução que utilza a função splice como parte dela.
