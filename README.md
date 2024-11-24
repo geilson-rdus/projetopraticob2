@@ -49,8 +49,8 @@ Antes de tudo, o código acima foi testado dez vezes no console do Google Chrome
 * 0.80908203125 ms
 
 A partir dos testes foi possível calcular o tempo médio e o desvio padrão:
-*Tempo médio: aproximadamente 0.832 ms
-*Desvio padrão: aproximadamente 0.063 ms
+Tempo médio: aproximadamente 0.832 ms //
+Desvio padrão: aproximadamente 0.063 ms
 
 A resposta encontrada para a otimização do código foi a seguinte:
 
@@ -95,8 +95,8 @@ O código também foi testado pelo console do Google Chrome e apresentou os segu
 * 0.426025390625 ms
 * 0.4541015625 ms
 
-*Tempo médio: aproximadamente 0.460 ms
-*Desvio padrão: aproximadamente 0.081 ms
+Tempo médio: aproximadamente 0.460 ms //
+Desvio padrão: aproximadamente 0.081 ms
 
 Calculando a diferença percentual como:
 
@@ -142,8 +142,8 @@ E realmente, o método apresenta um leve ganho de desempenho, passando pelos mes
 * 0.39404296875 ms
 * 0.400146484375 ms
 
-*Tempo médio: aproximadamente 0.417 ms
-*Desvio padrão: aproximadamente 0.063 ms
+Tempo médio: aproximadamente 0.417 ms //
+Desvio padrão: aproximadamente 0.063 ms
 
 Sendo 9,35% mais rápido do que a solução anteriormente apresentada.
 
