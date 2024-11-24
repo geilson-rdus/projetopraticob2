@@ -1,4 +1,4 @@
-# Trabalho Prático B2
+# Projeto Prático B2
 
 Esse arquivo README.md e o código em JavaSript foram desenvolvidos por Geilson Lucas
 
