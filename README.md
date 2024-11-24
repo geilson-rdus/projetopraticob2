@@ -1,6 +1,6 @@
 # Trabalho Prático B2
 
-#Esse arquivo README.md e o código em JavaSript foram desenvolvidos por Geilson Lucas
+Esse arquivo README.md e o código em JavaSript foram desenvolvidos por Geilson Lucas
 
 O trabalho prático do segundo bimestre tem como temática a otimização de um código que gera números aleatórios.
 
